@@ -1,0 +1,76 @@
+<SwitchLayout>:
+
+    mainonoff: mainonoff
+    alllights: alllights
+    light1: light1
+    light2: light2
+
+    FloatLayout:
+        Slider:
+            id: alllights
+            pos_hint: {"x":0.1, "y":0.18}
+            size_hint: 0.2, 0.75
+            orientation: 'vertical'
+
+        Slider:
+            id: light1
+            pos_hint: {"x":0.4, "y":0.86}
+            size_hint: 0.5, 0.1
+            orientation: 'horizontal'
+
+        Slider:
+            id: light2
+            pos_hint: {"x":0.4, "y":0.72}
+            size_hint: 0.5, 0.1
+            orientation: 'horizontal'
+
+        Slider:
+            id: light3
+            pos_hint: {"x":0.4, "y":0.58}
+            size_hint: 0.5, 0.1
+            orientation: 'horizontal'
+
+        Slider:
+            id: light4
+            pos_hint: {"x":0.4, "y":0.44}
+            size_hint: 0.5, 0.1
+            orientation: 'horizontal'
+
+        Slider:
+            id: light5
+            pos_hint: {"x":0.4, "y":0.3}
+            size_hint: 0.5, 0.1
+            orientation: 'horizontal'
+
+        Slider:
+            id: light6
+            pos_hint: {"x":0.4, "y":0.16}
+            size_hint: 0.5, 0.1
+            orientation: 'horizontal'
+
+        Button:
+            id: mainonoff
+            text: "On" if mainonoff.state == "normal" else "Off"
+            back_color: (0.157, 0.455, 0.753, 1
+                )
+            font_size:20
+            pos_hint: {"x":0.25, "bottom":1}
+            size_hint: 0.5, 0.10
+
+<Slider>:
+    min: 0
+    max: 100
+    step: 10
+
+<SmoothButton@Button>:
+    background_color: (0,0,0,0)
+    background_normal: ''
+    back_color: (1,0,1,1)
+    border_radius: [18]
+    canvas.before:
+        Color:
+            rgba: self.back_color
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: self.border_radius
